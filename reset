@@ -1,0 +1,20 @@
+private void btnResetActionPerformed(java.awt.event.ActionEvent evt){
+     txtJlhMieAyam.setEditable(false);
+     txtJlhAyamPenyet.setEditable(false);
+     txtJlhNasiGoreng.setEditable(false);
+     txtJlhSotoAyam.setEditable(false);
+     cboxMieAyam.setSelected(false);
+     cboxAyamPenyet.setSelected(false);
+     cboxNasiGoreng.setSelected(false);
+     cboxSotoAyam.setSelected(false);
+     txtMieAyam.setText("");
+     txtAyamPenyet.setText("");
+     txtNasiGoreng.setText("");
+     txtSotoAyam.setText("");
+     lblTJlh.setText("0 porsi");
+     lblTHrgMieAyam.setText('Rp. 0,-");
+     lblTHrgAyamPenyet.setText('Rp. 0,-");
+     lblTHrgNasiGoreng.setText('Rp. 0,-");
+     lblTHrgSotoAyam.setText('Rp. 0,-");
+     lblTBayar.setText("Rp. 0,-");
+}
