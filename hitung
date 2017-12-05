@@ -1,0 +1,85 @@
+private void btnHitungActionPerformed(java.awt.event.ActionEvent evt) {
+   int JlhMieAyam     = 0,
+       JlhAyamPenyet  = 0,
+       JlhNasiGoreng  = 0,
+       JlhSotoAyam    = 0,
+       HrgAyamMieAyam = 0,
+       HrgAyamPenyet  = 0,
+       HrgNasiGoreng  = 0,
+       HrgSotoAyam    = 0,
+       THrgMieAyam, THrgAyamPenyet, THrgNasiGoreng, THrgSotoAyam, TJlh, TBayar;
+   if (cboxMieAyam.isSelected() == false && cboxAyamPenyet.isSelected()==false && cboxNasiGoreng.isSelected()==false && cboxSotoAyam.isSelected()==false){
+       JOptionPane..showMessageDialog(null, "Makanan Belum Dipesan","Warning",JOptionPane.WARNING_MESSAGE);
+   }
+   else {
+       if (cboxMieAyam.isSelected()==true){
+          if (txtJlhMieAyam.getText().length()==0){
+              pesan_kosong();
+              txtJlhMieAyam.requestFocus();
+          }
+          else if (txtJlhMieAyam.getText().matches("[1-9]")){
+              JlhMieAyam    = Integer.parseInt(txtJlhMieAyam.getText());
+              HrgMieAyam    = 10000;
+              THargaMieAyam = JlhMieAyam * HrgMieAyam;
+              lbltHrgMieAyam.setText("Rp. "+THrgMieAyam+",-");
+          }
+          else {
+              pesan_karakter();
+              txtMieAyam.requestFocus();
+          }
+       } 
+       if (cboxAyamPenyet.isSelected()==true){
+          if (txtJlhAyamPenyet.getText().length()==0){
+              pesan_kosong();
+              txtJlhAyamPenyet.requestFocus();
+          }
+          else if (txtJlhAyamPenyet.getText().matches("[1-9]")){
+              JlhAyamPenyet    = Integer.parseInt(txtJlhAyamPenyet.getText());
+              HrgAyamPenyet    = 15000;
+              THargaAyamPenyet = JlhAyamPenyet * HrgAyamPenyet;
+              lbltHrgAyamPenyet.setText("Rp. "+THrgAyamPenyet+",-");
+          }
+          else {
+              pesan_karakter();
+              txtAyamPenyet.requestFocus();
+          }
+       } 
+       if (cboxNasiGoreng.isSelected()==true){
+          if (txtJlhNasiGoreng.getText().length()==0){
+              pesan_kosong();
+              txtJlhNasiGoreng.requestFocus();
+          }
+          else if (txtJlhNasiGoreng.getText().matches("[1-9]")){
+              JlhNasiGoreng    = Integer.parseInt(txtJlhNasiGoreng.getText());
+              HrgNasiGoreng    = 8000;
+              THargaNasiGoreng = JlhNasiGoreng * HrgNasiGoreng;
+              lbltHrgNasiGoreng.setText("Rp. "+THrgNasiGoreng+",-");
+          }
+          else {
+              pesan_karakter();
+              txtNasiGoreng.requestFocus();
+          }
+       }       
+       if (cboxSotoAyam.isSelected()==true){
+          if (txtJlhSotoAyam.getText().length()==0){
+              pesan_kosong();
+              txtJlhSotoAyam.requestFocus();
+          }
+          else if (txtJlhSotoAyam.getText().matches("[1-9]")){
+              JlhSotoAyam    = Integer.parseInt(txtJlhSotoAyam.getText());
+              HrgNasiGoreng  = 18000;
+              THargaSotoAyam = JlhSotoAyam * HrgSotoAyam;
+              lbltHrgSotoAyam.setText("Rp. "+THrgSotoAyam+",-");
+          }
+          else {
+              pesan_karakter();
+              txtSotoAyam.requestFocus();
+          }
+       }
+      
+       TJlh   = JlhMieAyam + TJlhAyamPenyet + TJlhNasiGoreng + TJlhSotoAyam;
+       TBayar = HrgMieAyam + HrgAyamPenyet + HrgNasiGoreng + TSotoAyam;
+       lblTJlh.setText(""+TJlh+"porsi");
+       lblTBayar.setText("Rp. "+TBayar+",-");
+   }
+}
