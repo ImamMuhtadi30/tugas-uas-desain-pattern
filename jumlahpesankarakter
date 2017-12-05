@@ -1,0 +1,3 @@
+private static void pesan_kosong(){
+   JOptionPane.showMessageDialog(null, "Jumlah Pesanan Mie Ayam Belum Dimasukkan","Warning", JOptionPane.WARNING_MESSAGE");
+}
